@@ -85,11 +85,11 @@ export default function PortfolioClient({ projects }: PortfolioClientProps) {
             </div>
             <div className="space-y-6 text-gray-300">
               <p className="text-lg leading-relaxed">
-                Welcome to my portfolio! I&apos;m <span className="text-purple-400 font-semibold">Axel Fernandes</span>, 
+                Welcome to my portfolio! I&apos;m <span className="text-purple-400 font-semibold">Axel Fernandes</span>,
                 a software engineer passionate about building innovative solutions and exploring the world of software engineering.
               </p>
               <p className="text-lg leading-relaxed">
-                This project page showcases all my current live projects and serves as a platform to 
+                This project page showcases all my current live projects and serves as a platform to
                 demonstrate my work in web applications, cloud solutions, and software development.
               </p>
               <div className="pt-6 border-t border-gray-700/50">
@@ -291,7 +291,7 @@ function ProjectCard({ project }: { project: Project }) {
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 rounded-lg glass hover:bg-purple-500/20 transition-colors text-sm font-medium"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white shadow-lg shadow-purple-500/25 transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 text-sm font-bold ring-1 ring-purple-400/30"
           >
             <ExternalLink className="w-4 h-4" />
             Live Demo
