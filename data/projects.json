@@ -4,30 +4,52 @@
       "id": "gcp-dashboard",
       "title": "GCPLens | Premium GCP Usage & Location Insights Dashboard",
       "description": "A high-end, futuristic dashboard designed to visualize Google Cloud resource usage, costs, and service health across global locations. Built with a focus on 'Vibrant' aesthetics and glassmorphism.",
-      "liveUrl": "https://googledashboardapp1.additivedynamics.com/",
+      "liveUrl": "https://gcapp1.forgify.io",
       "githubUrl": "https://github.com/Axelfernandes/google_dashboard_axel",
       "blogPost": "",
-      "tags": ["Next.js", "TypeScript", "GCP", "Docker", "Cloud Run", "Data Visualization"],
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "GCP",
+        "Docker",
+        "Cloud Run",
+        "Data Visualization"
+      ],
       "featured": true
     },
     {
       "id": "emo-narrator",
       "title": "Emo Narrator | AI-Powered Emotional Voice Generator",
       "description": "A full-stack TypeScript application that brings text to life using emotional AI voices from ElevenLabs. Features real-time text-to-speech conversion with emotional context, request metrics tracking in AWS DynamoDB, and a modern Next.js interface.",
-      "liveUrl": "https://main.d11c506w0cprcx.amplifyapp.com/",
+      "liveUrl": "https://ttv1.forgify.io",
       "githubUrl": "https://github.com/Axelfernandes/eleven_labs_voicesdemo_axel",
       "blogPost": "",
-      "tags": ["Next.js", "TypeScript", "AWS Amplify", "DynamoDB", "ElevenLabs API", "Tailwind CSS"],
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "AWS Amplify",
+        "DynamoDB",
+        "ElevenLabs API",
+        "Tailwind CSS"
+      ],
       "featured": true
     },
     {
       "id": "lunchdeals",
       "title": "LunchDeals AI | GPS-Based Lunch Specials Finder",
       "description": "A real-time discovery engine that automatically detects your GPS location to find the best lunch specials and discounts within a 15-mile radius. Features real-time scraping with Firecrawl, powerful filtering by cuisine and dietary needs, and dual view mode with interactive maps.",
-      "liveUrl": "https://main.dwgzmurd19nke.amplifyapp.com/",
+      "liveUrl": "https://lunchdeals.forgify.io",
       "githubUrl": "https://github.com/Axelfernandes/lunchdeals",
       "blogPost": "",
-      "tags": ["React", "TypeScript", "Node.js", "Express", "Firecrawl", "AWS Amplify", "Tailwind CSS"],
+      "tags": [
+        "React",
+        "TypeScript",
+        "Node.js",
+        "Express",
+        "Firecrawl",
+        "AWS Amplify",
+        "Tailwind CSS"
+      ],
       "featured": true
     }
   ]
