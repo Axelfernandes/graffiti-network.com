@@ -1,0 +1,14 @@
+{
+  "projects": [
+    {
+      "id": "gcp-dashboard",
+      "title": "GCPLens | Premium GCP Usage & Location Insights Dashboard",
+      "description": "A high-end, futuristic dashboard designed to visualize Google Cloud resource usage, costs, and service health across global locations. Built with a focus on 'Vibrant' aesthetics and glassmorphism.",
+      "liveUrl": "https://googledashboardapp1.additivedynamics.com/",
+      "githubUrl": "https://github.com/Axelfernandes/google_dashboard_axel",
+      "blogPost": "",
+      "tags": ["Next.js", "TypeScript", "GCP", "Docker", "Cloud Run", "Data Visualization"],
+      "featured": true
+    }
+  ]
+}
