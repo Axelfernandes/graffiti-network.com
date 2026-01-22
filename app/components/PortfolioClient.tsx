@@ -37,9 +37,9 @@ export default function PortfolioClient({ projects }: PortfolioClientProps) {
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 animated-gradient opacity-20"></div>
-        <div className="relative container mx-auto px-4 py-20 md:py-32">
+        <div className="relative container mx-auto px-4 py-8 md:py-12">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
@@ -48,17 +48,14 @@ export default function PortfolioClient({ projects }: PortfolioClientProps) {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
-              className="inline-block mb-6"
+              className="inline-block mb-3"
             >
-              <Sparkles className="w-16 h-16 text-purple-400" />
+              <Sparkles className="w-10 h-10 text-purple-400" />
             </motion.div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-4">
-              <span className="gradient-text">Graffiti Network</span>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="gradient-text">Axel Fernandes</span>
             </h1>
-            <h2 className="text-2xl md:text-3xl font-semibold text-gray-200 mb-8">
-              Axel Fernandes
-            </h2>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8">
+            <p className="text-lg md:text-xl text-gray-300 mb-4">
               Software Development Projects & Portfolio
             </p>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto">
@@ -217,12 +214,12 @@ export default function PortfolioClient({ projects }: PortfolioClientProps) {
               </a>
             </div>
             <p className="text-gray-500 text-sm mt-4">
-              © {new Date().getFullYear()} Graffiti Network. Built with Next.js & TypeScript.
+              © {new Date().getFullYear()} Axel Fernandes. Built with Next.js & TypeScript.
             </p>
           </div>
         </div>
       </footer>
-    </main>
+    </main >
   );
 }
 

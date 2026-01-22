@@ -5,7 +5,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Graffiti Network | Portfolio',
+  title: 'Axel Fernandes | Portfolio',
   description: 'Software Development Projects Portfolio by Axel Fernandes',
   keywords: ['portfolio', 'software development', 'web applications', 'projects'],
 };
