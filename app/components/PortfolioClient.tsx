@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, FileText, Sparkles, GraduationCap, Code } from 'lucide-react';
+import { ExternalLink, Github, FileText, Sparkles, GraduationCap, Code, Mail, Linkedin } from 'lucide-react';
 
 interface Project {
   id: string;
@@ -182,8 +182,43 @@ export default function PortfolioClient({ projects }: PortfolioClientProps) {
       {/* Footer */}
       <footer className="border-t border-gray-800 mt-20">
         <div className="container mx-auto px-4 py-8">
-          <div className="text-center text-gray-400">
-            <p>© {new Date().getFullYear()} Graffiti Network. Built with Next.js & TypeScript.</p>
+          <div className="text-center space-y-4">
+            <p className="text-gray-400">
+              Made by <span className="text-purple-400 font-semibold">Axel Joaquim Fernandes</span>
+            </p>
+            <div className="flex justify-center items-center gap-6 flex-wrap">
+              <a
+                href="mailto:axe.coleslaw322@passinbox.com"
+                className="flex items-center gap-2 text-gray-400 hover:text-purple-400 transition-colors"
+                aria-label="Email"
+              >
+                <Mail className="w-5 h-5" />
+                <span className="text-sm">Email</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/axelfernandes/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-gray-400 hover:text-purple-400 transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
+                <span className="text-sm">LinkedIn</span>
+              </a>
+              <a
+                href="https://github.com/Axelfernandes"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-gray-400 hover:text-purple-400 transition-colors"
+                aria-label="GitHub"
+              >
+                <Github className="w-5 h-5" />
+                <span className="text-sm">GitHub</span>
+              </a>
+            </div>
+            <p className="text-gray-500 text-sm mt-4">
+              © {new Date().getFullYear()} Graffiti Network. Built with Next.js & TypeScript.
+            </p>
           </div>
         </div>
       </footer>

@@ -19,6 +19,16 @@
       "blogPost": "",
       "tags": ["Next.js", "TypeScript", "AWS Amplify", "DynamoDB", "ElevenLabs API", "Tailwind CSS"],
       "featured": true
+    },
+    {
+      "id": "lunchdeals",
+      "title": "LunchDeals AI | GPS-Based Lunch Specials Finder",
+      "description": "A real-time discovery engine that automatically detects your GPS location to find the best lunch specials and discounts within a 15-mile radius. Features real-time scraping with Firecrawl, powerful filtering by cuisine and dietary needs, and dual view mode with interactive maps.",
+      "liveUrl": "https://main.dwgzmurd19nke.amplifyapp.com/",
+      "githubUrl": "https://github.com/Axelfernandes/lunchdeals",
+      "blogPost": "",
+      "tags": ["React", "TypeScript", "Node.js", "Express", "Firecrawl", "AWS Amplify", "Tailwind CSS"],
+      "featured": true
     }
   ]
 }
