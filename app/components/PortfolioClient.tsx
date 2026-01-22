@@ -85,7 +85,7 @@ export default function PortfolioClient({ projects }: PortfolioClientProps) {
             </div>
             <div className="space-y-6 text-gray-300">
               <p className="text-lg leading-relaxed">
-                Welcome to my portfolio! I'm <span className="text-purple-400 font-semibold">Axel Fernandes</span>, 
+                Welcome to my portfolio! I&apos;m <span className="text-purple-400 font-semibold">Axel Fernandes</span>, 
                 a software engineer passionate about building innovative solutions and exploring the world of software engineering.
               </p>
               <p className="text-lg leading-relaxed">

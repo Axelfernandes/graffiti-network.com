@@ -23,7 +23,7 @@ RUN npm run build
 FROM base AS runner
 WORKDIR /app
 
-ENV NODE_ENV production
+ENV NODE_ENV=production
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
@@ -32,13 +32,15 @@ RUN adduser --system --uid 1001 nextjs
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
+# Copy data folder explicitly to ensure it's available
 COPY --from=builder /app/data ./data
 
 USER nextjs
 
-EXPOSE 3000
+# Cloud Run will set PORT automatically, but we default to 8080
+ENV PORT=8080
+ENV HOSTNAME="0.0.0.0"
 
-ENV PORT 3000
-ENV HOSTNAME "0.0.0.0"
+EXPOSE 8080
 
 CMD ["node", "server.js"]
