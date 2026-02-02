@@ -51,6 +51,58 @@
         "Tailwind CSS"
       ],
       "featured": true
+    },
+    {
+      "id": "driver-analytics",
+      "title": "Curri | Driver Engagement & Sentiment Dashboard",
+      "description": "A high-performance logistics analytics platform designed to monitor driver retention, sentiment mapping, and operational pilots. Built with Next.js 15 and Recharts for real-time fleet insights.",
+      "liveUrl": "",
+      "githubUrl": "https://github.com/Axelfernandes/driver_analytics",
+      "blogPost": "",
+      "tags": [
+        "Next.js 15",
+        "Recharts",
+        "Logistics",
+        "Retention Analytics",
+        "Sentiment Analysis",
+        "Tailwind CSS"
+      ],
+      "featured": true
+    },
+    {
+      "id": "axel-cli",
+      "title": "Axel | AI Coding Assistant & CLI Agent",
+      "description": "A lightweight CLI coding agent powered by a FastAPI/GCP backend. Features model-agnostic architecture with Vertex AI integration, specialized Fill-In-the-Middle (FIM) endpoints, and seamless model swapping without client-side changes.",
+      "liveUrl": "",
+      "githubUrl": "https://github.com/Axelfernandes/axel_cli",
+      "blogPost": "",
+      "tags": [
+        "Python",
+        "FastAPI",
+        "GCP",
+        "Cloud Run",
+        "Mistral AI",
+        "Vertex AI",
+        "CLI"
+      ],
+      "featured": true
+    },
+    {
+      "id": "binance-trader-bot",
+      "title": "Axel's Binance Trader Bot | Real-Time Crypto Terminal",
+      "description": "An institutional-grade trading bot with real-time WebSocket architecture for zero-latency price updates. Implements EMA Crossover, Bollinger Bands, and MACD strategies with automated risk management and a sleek glassmorphism dashboard.",
+      "liveUrl": "",
+      "githubUrl": "https://github.com/Axelfernandes/axels_binance_trader_bot",
+      "blogPost": "",
+      "tags": [
+        "React",
+        "Vite",
+        "WebSockets",
+        "Binance API",
+        "Technical Analysis",
+        "Glassmorphism"
+      ],
+      "featured": true
     }
   ]
 }
