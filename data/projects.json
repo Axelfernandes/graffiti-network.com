@@ -1,6 +1,23 @@
 {
   "projects": [
     {
+      "id": "blitz-tracker",
+      "title": "BlitzTracker | AI-Powered Product Hunt Analysis",
+      "description": "A high-performance analytics dashboard that leverages Google's Gemini AI to score daily Product Hunt launches against Blitzscaling principles. Features 6-dimensional AI scoring, premium data visualization, and real-time sync.",
+      "liveUrl": "https://producthunt.forgify.io",
+      "githubUrl": "https://github.com/Axelfernandes/blitz-tracker-product-hunt",
+      "blogPost": "",
+      "tags": [
+        "Next.js 16",
+        "React 19",
+        "AWS Amplify Gen 2",
+        "Gemini AI",
+        "Tailwind CSS 4.0",
+        "Framer Motion"
+      ],
+      "featured": true
+    },
+    {
       "id": "gcp-dashboard",
       "title": "GCPLens | Premium GCP Usage & Location Insights Dashboard",
       "description": "A high-end, futuristic dashboard designed to visualize Google Cloud resource usage, costs, and service health across global locations. Built with a focus on 'Vibrant' aesthetics and glassmorphism.",
