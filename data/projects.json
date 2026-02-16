@@ -18,6 +18,23 @@
       "featured": true
     },
     {
+      "id": "affiliate-app",
+      "title": "Auto-Niche | AI-Driven Affiliate Micro-SaaS",
+      "description": "A cutting-edge affiliate marketing platform fusing Gemini 2.5 AI creativity with real-time retailer intelligence. Features live Keepa-style price tracking, multi-API fusion (Rainforest/Best Buy), and high-fidelity review generation.",
+      "liveUrl": "https://affiliate.forgify.io/",
+      "githubUrl": "https://github.com/Axelfernandes/affiliate_app_amazon",
+      "blogPost": "",
+      "tags": [
+        "React 19",
+        "Vite 6",
+        "AWS Amplify Gen 2",
+        "Gemini 2.5 Flash",
+        "Tailwind CSS 4",
+        "Rainforest API"
+      ],
+      "featured": true
+    },
+    {
       "id": "gcp-dashboard",
       "title": "GCPLens | Premium GCP Usage & Location Insights Dashboard",
       "description": "A high-end, futuristic dashboard designed to visualize Google Cloud resource usage, costs, and service health across global locations. Built with a focus on 'Vibrant' aesthetics and glassmorphism.",
