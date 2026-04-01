@@ -1,6 +1,23 @@
 {
   "projects": [
     {
+      "id": "fooddash-analytics",
+      "title": "FoodDash | Ad Analytics & Performance Dashboard",
+      "description": "A high-performance advertising analytics platform for tracking campaign effectiveness and merchant performance. Built with React and a powerful in-memory SQL engine (AlaSQL) for real-time data processing and interactive visualizations.",
+      "liveUrl": "https://fooddash.forgify.io/",
+      "githubUrl": "https://github.com/Axelfernandes/ads_de_1",
+      "blogPost": "",
+      "tags": [
+        "React",
+        "TypeScript",
+        "AlaSQL",
+        "Recharts",
+        "Data Engineering",
+        "Vite"
+      ],
+      "featured": true
+    },
+    {
       "id": "blitz-tracker",
       "title": "BlitzTracker | AI-Powered Product Hunt Analysis",
       "description": "A high-performance analytics dashboard that leverages Google's Gemini AI to score daily Product Hunt launches against Blitzscaling principles. Features 6-dimensional AI scoring, premium data visualization, and real-time sync.",
