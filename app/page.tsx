@@ -13,6 +13,14 @@ interface Project {
   featured: boolean;
 }
 
+interface Certificate {
+  id: string;
+  title: string;
+  issuer: string;
+  file: string;
+  type: string;
+}
+
 function getProjects(): Project[] {
   try {
     const filePath = join(process.cwd(), 'data', 'projects.json');
@@ -25,8 +33,21 @@ function getProjects(): Project[] {
   }
 }
 
+function getCertificates(): Certificate[] {
+  try {
+    const filePath = join(process.cwd(), 'data', 'certificates.json');
+    const fileContents = readFileSync(filePath, 'utf8');
+    const data = JSON.parse(fileContents);
+    return data.certificates || [];
+  } catch (error) {
+    console.error('Error reading certificates.json:', error);
+    return [];
+  }
+}
+
 export default function Home() {
   const projects = getProjects();
+  const certificates = getCertificates();
 
-  return <PortfolioClient projects={projects} />;
+  return <PortfolioClient projects={projects} certificates={certificates} />;
 }

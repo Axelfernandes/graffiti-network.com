@@ -1,7 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { ExternalLink, Github, FileText, Sparkles, GraduationCap, Code, Mail, Linkedin } from 'lucide-react';
+import { useState, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ExternalLink, Github, FileText, Sparkles, GraduationCap, Code, Mail, Linkedin, Award, FileIcon, ImageIcon, X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface Project {
   id: string;
@@ -14,13 +15,32 @@ interface Project {
   featured: boolean;
 }
 
-interface PortfolioClientProps {
-  projects: Project[];
+interface Certificate {
+  id: string;
+  title: string;
+  issuer: string;
+  file: string;
+  type: string;
 }
 
-export default function PortfolioClient({ projects }: PortfolioClientProps) {
+interface PortfolioClientProps {
+  projects: Project[];
+  certificates: Certificate[];
+}
+
+export default function PortfolioClient({ projects, certificates }: PortfolioClientProps) {
   const featuredProjects = projects.filter((p) => p.featured);
   const otherProjects = projects.filter((p) => !p.featured);
+  const [selectedCertificate, setSelectedCertificate] = useState<Certificate | null>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (carouselRef.current) {
+      const { scrollLeft, clientWidth } = carouselRef.current;
+      const scrollTo = direction === 'left' ? scrollLeft - clientWidth : scrollLeft + clientWidth;
+      carouselRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' });
+    }
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -56,10 +76,10 @@ export default function PortfolioClient({ projects }: PortfolioClientProps) {
               <span className="gradient-text">Axel Fernandes</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-300 mb-4">
-              Software Development Projects & Portfolio
+              Software and Data Engineering Projects, Pipeline Development, Portfolio, and Certifications
             </p>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-              Showcasing innovative web applications, cloud solutions, and software development
+              Showcasing innovative web applications, cloud solutions, software & Data Engineering Pipelines and development
               projects built with modern technologies.
             </p>
           </motion.div>
@@ -82,12 +102,12 @@ export default function PortfolioClient({ projects }: PortfolioClientProps) {
             </div>
             <div className="space-y-6 text-gray-300">
               <p className="text-lg leading-relaxed">
-                Welcome to my portfolio! I&apos;m <span className="text-purple-400 font-semibold">Axel Fernandes</span>,
-                a software engineer passionate about building innovative solutions and exploring the world of software engineering.
+                Welcome to my portfolio Website! I&apos;m <span className="text-purple-400 font-semibold">Axel Fernandes</span>,
+                a Software and Senior Data Engineer passionate about building innovative solutions and exploring the world of software & data engineering.
               </p>
               <p className="text-lg leading-relaxed">
                 This project page showcases all my current live projects and serves as a platform to
-                demonstrate my work in web applications, cloud solutions, and software development.
+                demonstrate my work in web applications, cloud solutions, and software & Data Engineering Pipelines and development.
               </p>
               <div className="pt-6 border-t border-gray-700/50">
                 <div className="flex items-center gap-3 mb-4">
@@ -108,6 +128,65 @@ export default function PortfolioClient({ projects }: PortfolioClientProps) {
             </div>
           </div>
         </motion.div>
+      </section>
+
+      {/* Certificates Section (Carousel + Modal) */}
+      <section className="container mx-auto px-4 py-8 md:py-16">
+        {certificates && certificates.length > 0 && (
+          <div className="mb-8 relative">
+            <div className="flex items-center justify-between mb-8">
+              <div className="flex items-center gap-3">
+                <Award className="w-8 h-8 text-purple-400" />
+                <motion.h2
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="text-3xl md:text-4xl font-bold gradient-text"
+                >
+                  Certificates & Achievements
+                </motion.h2>
+              </div>
+              <div className="flex gap-2 hidden md:flex">
+                <button
+                  onClick={() => scroll('left')}
+                  className="p-2 rounded-full glass hover:bg-purple-500/20 transition-colors text-gray-400 hover:text-white"
+                  aria-label="Scroll Left"
+                >
+                  <ChevronLeft className="w-6 h-6" />
+                </button>
+                <button
+                  onClick={() => scroll('right')}
+                  className="p-2 rounded-full glass hover:bg-purple-500/20 transition-colors text-gray-400 hover:text-white"
+                  aria-label="Scroll Right"
+                >
+                  <ChevronRight className="w-6 h-6" />
+                </button>
+              </div>
+            </div>
+
+            <div className="relative group">
+              <motion.div
+                ref={carouselRef}
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              >
+                {certificates.map((cert) => (
+                  <div key={cert.id} className="min-w-[280px] sm:min-w-[320px] snap-center shrink-0">
+                    <CertificateCard
+                      certificate={cert}
+                      onClick={() => setSelectedCertificate(cert)}
+                    />
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+          </div>
+        )}
       </section>
 
       {/* Projects Section */}
@@ -219,6 +298,69 @@ export default function PortfolioClient({ projects }: PortfolioClientProps) {
           </div>
         </div>
       </footer>
+
+      {/* Certificate Modal */}
+      <AnimatePresence>
+        {selectedCertificate && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+            onClick={() => setSelectedCertificate(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="relative w-full max-w-5xl bg-gray-900 rounded-2xl border border-gray-700/50 shadow-2xl overflow-hidden flex flex-col"
+              style={{ maxHeight: '90vh' }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex items-center justify-between p-4 border-b border-gray-800 bg-gray-900/50">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-100">{selectedCertificate.title}</h3>
+                  <p className="text-sm text-gray-400">{selectedCertificate.issuer}</p>
+                </div>
+                <button
+                  onClick={() => setSelectedCertificate(null)}
+                  className="p-2 rounded-full hover:bg-gray-800 transition-colors text-gray-400 hover:text-white"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+
+              <div className="flex-1 overflow-auto p-4 flex items-center justify-center bg-black/20 min-h-[50vh]">
+                {selectedCertificate.type === 'pdf' ? (
+                  <iframe
+                    src={selectedCertificate.file}
+                    className="w-full h-full min-h-[600px] rounded-lg bg-white"
+                    title={selectedCertificate.title}
+                  />
+                ) : (
+                  <img
+                    src={selectedCertificate.file}
+                    alt={selectedCertificate.title}
+                    className="max-w-full max-h-[70vh] object-contain rounded-lg shadow-lg"
+                  />
+                )}
+              </div>
+
+              <div className="p-4 border-t border-gray-800 bg-gray-900/50 flex justify-end">
+                <a
+                  href={selectedCertificate.file}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white transition-all text-sm font-bold shadow-lg shadow-purple-500/25"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  Open Full Screen
+                </a>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </main >
   );
 }
@@ -316,6 +458,55 @@ function ProjectCard({ project }: { project: Project }) {
             Blog
           </a>
         )}
+      </div>
+    </motion.div>
+  );
+}
+
+function CertificateCard({ certificate, onClick }: { certificate: Certificate, onClick: () => void }) {
+  return (
+    <motion.div
+      variants={{
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.5 },
+        },
+      }}
+      whileHover={{ y: -8, scale: 1.02 }}
+      className="glass-strong rounded-2xl p-5 hover:border-purple-500/50 transition-all duration-300 group flex flex-col h-full cursor-pointer"
+      onClick={onClick}
+    >
+      <div className="mb-4 bg-gray-900/50 rounded-lg overflow-hidden flex items-center justify-center flex-shrink-0 h-40 border border-gray-700/50 group-hover:border-purple-500/50 transition-colors relative">
+        {certificate.type === 'pdf' ? (
+          <div className="flex flex-col items-center gap-2">
+            <FileIcon className="w-10 h-10 text-blue-400 opacity-80 group-hover:scale-110 transition-transform" />
+            <span className="text-xs text-gray-500 font-medium uppercase tracking-wider">PDF Document</span>
+          </div>
+        ) : (
+          <div className="w-full h-full relative">
+            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent z-10 opacity-60"></div>
+            <img
+              src={certificate.file}
+              alt={certificate.title}
+              className="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+            />
+          </div>
+        )}
+      </div>
+      <div className="flex-1 flex flex-col pointer-events-none mt-2">
+        <h3 className="text-lg font-bold mb-1 group-hover:text-purple-400 transition-colors line-clamp-3 whitespace-pre-line">
+          {certificate.title}
+        </h3>
+        <p className="text-gray-400 text-sm mb-4">{certificate.issuer}</p>
+
+        <div className="mt-auto pt-4 border-t border-gray-700/50">
+          <div className="flex items-center justify-center gap-2 w-full px-4 py-2 rounded-lg glass group-hover:bg-purple-500/20 transition-colors text-sm font-medium text-gray-300 group-hover:text-white">
+            <ExternalLink className="w-4 h-4" />
+            View Certificate
+          </div>
+        </div>
       </div>
     </motion.div>
   );

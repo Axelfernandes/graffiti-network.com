@@ -1,0 +1,60 @@
+{
+  "certificates": [
+    {
+      "id": "cert-177",
+      "title": "Senior Data Engineer",
+      "issuer": "Micro1",
+      "file": "/certificates/1776989814-35439b88-9d0e-4a75-aa41-2d3e511cbb42.jpg",
+      "type": "image"
+    },
+    {
+      "id": "python",
+      "title": "Python",
+      "issuer": "Kaggle",
+      "file": "/certificates/Axel Fernandes - Python.png",
+      "type": "image"
+    },
+    {
+      "id": "data-visualization",
+      "title": "Data Visualization",
+      "issuer": "Kaggle",
+      "file": "/certificates/Axel Fernandes - Data Visualization.png",
+      "type": "image"
+    },
+    {
+      "id": "databricks-generic",
+      "title": "Databricks Accredited",
+      "issuer": "Databricks",
+      "file": "/certificates/2308_3_1553844_1778269661_Databricks - Generic.png",
+      "type": "image"
+    },
+    {
+      "id": "intro-machine-learning",
+      "title": "Intro to Machine Learning",
+      "issuer": "Kaggle",
+      "file": "/certificates/Axel Fernandes - Intro to Machine Learning.png",
+      "type": "image"
+    },
+    {
+      "id": "intro-programming",
+      "title": "Intro to Programming",
+      "issuer": "Kaggle",
+      "file": "/certificates/Axel Fernandes - Intro to Programming.png",
+      "type": "image"
+    },
+    {
+      "id": "cert-52a",
+      "title": "Amazon Athena Getting Started",
+      "issuer": "AWS Training & Certification",
+      "file": "/certificates/52a816fb-9eb4-4b9e-bcc7-cb69bc889851.png",
+      "type": "image"
+    },
+    {
+      "id": "cert-937",
+      "title": "Amazon Managed Workflows\nfor Apache Airflow\nGetting Started",
+      "issuer": "AWS Training & Certification",
+      "file": "/certificates/937c0638-f580-4b33-93c7-419354c977a3.png",
+      "type": "image"
+    }
+  ]
+}
