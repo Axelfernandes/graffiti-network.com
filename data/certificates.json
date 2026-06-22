@@ -1,6 +1,55 @@
 {
   "certificates": [
     {
+      "id": "databricks-generic",
+      "title": "Databricks Accredited",
+      "issuer": "Databricks",
+      "file": "/certificates/2308_3_1553844_1778269661_Databricks - Generic.png",
+      "type": "image"
+    },
+    {
+      "id": "databricks-retrieval-agents",
+      "title": "Knowledge Badge -\nBuilding Retrieval Agents\nOn Databricks",
+      "issuer": "Databricks Academy",
+      "file": "/certificates/33e4483e-e54c-4a8c-955a-31f75fa3da65.png",
+      "type": "image"
+    },
+    {
+      "id": "databricks-fundamentals",
+      "title": "Academy Accreditation -\nDatabricks Fundamentals",
+      "issuer": "Databricks Academy",
+      "file": "/certificates/c42ee51e-e082-48fd-ad56-945759017b42.png",
+      "type": "image"
+    },
+    {
+      "id": "generative-ai-fundamentals",
+      "title": "Academy Accreditation -\nGenerative AI Fundamentals",
+      "issuer": "Databricks Academy",
+      "file": "/certificates/af5bb87d-286f-4427-8432-10903e4b4006.png",
+      "type": "image"
+    },
+    {
+      "id": "cert-aws-glue",
+      "title": "AWS Glue Getting Started",
+      "issuer": "AWS Training & Certification",
+      "file": "/certificates/AWS_GLUE_Getting_started_by_AWStraining&Certification.png",
+      "type": "image"
+    },
+    {
+      "id": "cert-52a",
+      "title": "Amazon Athena Getting Started",
+      "issuer": "AWS Training & Certification",
+      "file": "/certificates/52a816fb-9eb4-4b9e-bcc7-cb69bc889851.png",
+      "type": "image"
+    },
+    {
+      "id": "cert-937",
+      "title": "Amazon Managed Workflows\nfor Apache Airflow\nGetting Started",
+      "issuer": "AWS Training & Certification",
+      "file": "/certificates/937c0638-f580-4b33-93c7-419354c977a3.png",
+      "type": "image"
+    },
+    {
       "id": "cert-177",
       "title": "Senior Data Engineer",
       "issuer": "Micro1",
@@ -22,24 +71,10 @@
       "type": "image"
     },
     {
-      "id": "cert-aws-glue",
-      "title": "AWS Glue Getting Started",
-      "issuer": "AWS Training & Certification",
-      "file": "/certificates/AWS_GLUE_Getting_started_by_AWStraining&Certification.png",
-      "type": "image"
-    },
-    {
       "id": "data-visualization",
       "title": "Data Visualization",
       "issuer": "Kaggle",
       "file": "/certificates/Axel Fernandes - Data Visualization.png",
-      "type": "image"
-    },
-    {
-      "id": "databricks-generic",
-      "title": "Databricks Accredited",
-      "issuer": "Databricks",
-      "file": "/certificates/2308_3_1553844_1778269661_Databricks - Generic.png",
       "type": "image"
     },
     {
@@ -55,20 +90,8 @@
       "issuer": "Kaggle",
       "file": "/certificates/Axel Fernandes - Intro to Programming.png",
       "type": "image"
-    },
-    {
-      "id": "cert-52a",
-      "title": "Amazon Athena Getting Started",
-      "issuer": "AWS Training & Certification",
-      "file": "/certificates/52a816fb-9eb4-4b9e-bcc7-cb69bc889851.png",
-      "type": "image"
-    },
-    {
-      "id": "cert-937",
-      "title": "Amazon Managed Workflows\nfor Apache Airflow\nGetting Started",
-      "issuer": "AWS Training & Certification",
-      "file": "/certificates/937c0638-f580-4b33-93c7-419354c977a3.png",
-      "type": "image"
     }
   ]
 }
+
+

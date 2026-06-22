@@ -4,6 +4,12 @@ import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, FileText, Sparkles, GraduationCap, Code, Mail, Linkedin, Award, FileIcon, ImageIcon, X, ChevronLeft, ChevronRight } from 'lucide-react';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 interface Project {
   id: string;
   title: string;
@@ -32,15 +38,6 @@ export default function PortfolioClient({ projects, certificates }: PortfolioCli
   const featuredProjects = projects.filter((p) => p.featured);
   const otherProjects = projects.filter((p) => !p.featured);
   const [selectedCertificate, setSelectedCertificate] = useState<Certificate | null>(null);
-  const carouselRef = useRef<HTMLDivElement>(null);
-
-  const scroll = (direction: 'left' | 'right') => {
-    if (carouselRef.current) {
-      const { scrollLeft, clientWidth } = carouselRef.current;
-      const scrollTo = direction === 'left' ? scrollLeft - clientWidth : scrollLeft + clientWidth;
-      carouselRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' });
-    }
-  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -149,15 +146,13 @@ export default function PortfolioClient({ projects, certificates }: PortfolioCli
               </div>
               <div className="flex gap-2 hidden md:flex">
                 <button
-                  onClick={() => scroll('left')}
-                  className="p-2 rounded-full glass hover:bg-purple-500/20 transition-colors text-gray-400 hover:text-white"
+                  className="cert-prev-button p-2 rounded-full glass hover:bg-purple-500/20 transition-colors text-gray-400 hover:text-white z-10"
                   aria-label="Scroll Left"
                 >
                   <ChevronLeft className="w-6 h-6" />
                 </button>
                 <button
-                  onClick={() => scroll('right')}
-                  className="p-2 rounded-full glass hover:bg-purple-500/20 transition-colors text-gray-400 hover:text-white"
+                  className="cert-next-button p-2 rounded-full glass hover:bg-purple-500/20 transition-colors text-gray-400 hover:text-white z-10"
                   aria-label="Scroll Right"
                 >
                   <ChevronRight className="w-6 h-6" />
@@ -165,26 +160,44 @@ export default function PortfolioClient({ projects, certificates }: PortfolioCli
               </div>
             </div>
 
-            <div className="relative group">
-              <motion.div
-                ref={carouselRef}
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8"
-                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="relative w-full py-8"
+            >
+              <Swiper
+                effect={'coverflow'}
+                grabCursor={true}
+                centeredSlides={true}
+                slidesPerView={'auto'}
+                initialSlide={1}
+                coverflowEffect={{
+                  rotate: 25,
+                  stretch: 0,
+                  depth: 200,
+                  modifier: 1,
+                  slideShadows: false,
+                }}
+                pagination={{ clickable: true }}
+                navigation={{
+                  prevEl: '.cert-prev-button',
+                  nextEl: '.cert-next-button',
+                }}
+                modules={[EffectCoverflow, Pagination, Navigation]}
+                className="w-full pb-16 pt-4"
               >
                 {certificates.map((cert) => (
-                  <div key={cert.id} className="min-w-[280px] sm:min-w-[320px] snap-center shrink-0">
+                  <SwiperSlide key={cert.id} style={{ width: '340px', height: 'auto' }} className="flex">
                     <CertificateCard
                       certificate={cert}
                       onClick={() => setSelectedCertificate(cert)}
                     />
-                  </div>
+                  </SwiperSlide>
                 ))}
-              </motion.div>
-            </div>
+              </Swiper>
+            </motion.div>
           </div>
         )}
       </section>
